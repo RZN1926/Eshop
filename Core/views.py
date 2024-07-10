@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponse
-from .models import Product, Customer
+from .models import Product
 
 # Create your views here.
 def homepage(request):
@@ -7,8 +7,3 @@ def homepage(request):
     context = {'products': product_list}
     #return HttpResponse('Hello Django!')
     return render(request, 'index.html', context)
-
-def customer_view(request):
-    customers_list = Customer.objects.all()
-    context = {'cust': customers_list}
-    return render(request, 'cust.html', context)

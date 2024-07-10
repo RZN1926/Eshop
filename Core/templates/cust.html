@@ -1,6 +1,11 @@
-<h1>Customer</h1>
+<a href="/products/"> Продукты </a> |
+<a href="/customers/"> Клиенты </a> |
+<a href="/news/"> Новости </a>
+
+
+<h1>Customers</h1>
 {% for customer in cust %}
-    <div>{{ customer.id }}. {{ customer.name }}, {{ customer.age }}, {{ customer.sex }}</div>
+    <div>{{ customer.id }}. <strong>name: </strong>{{ customer.name }}, <strong>age: </strong>{{ customer.age }}, <strong>sex: </strong>{{ customer.sex }}</div>
 {% endfor %}
 
 

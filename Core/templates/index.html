@@ -1,6 +1,10 @@
+<a href="/products/"> Продукты </a> |
+<a href="/customers/"> Клиенты </a> |
+<a href="/news/"> Новости </a>
+
 <h1>Products</h1>
 {% for product in products %}
-    <div>{{ product.id }}. {{ product.name }}: {{ product.price }} сом</div>
+    <div>{{ product.id }}. <strong>{{ product.name }}:</strong> {{ product.price }} сом</div>
 {% endfor %}
 
 

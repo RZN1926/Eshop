@@ -1,0 +1,10 @@
+<a href="/products/"> Продукты </a> |
+<a href="/customers/"> Клиенты </a> |
+<a href="/news/"> Новости </a>
+
+<h1>News</h1>
+{% for news in news %}
+    <div><br><strong>{{ news.title }}:</strong> <br> {{ news.article }} <br>{{ news.views }} views</div>
+{% endfor %}
+
+
