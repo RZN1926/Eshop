@@ -24,7 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('products/', homepage),
     path('customers/', customer_view),
-    path('news/', news)
+    path('news/', news, name = 'news-list')
 ]
 
 
