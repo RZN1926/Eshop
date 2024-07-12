@@ -22,11 +22,18 @@ class Product(models.Model):
         on_delete = models.SET_NULL,
         null = True, blank = True,
         verbose_name = 'Категория')
+    views_qty = models.IntegerField(default = 0)
     def __str__(self):
         return self.name
+    
+
 
 class Profile(models.Model):
-    bio = models.TextField()
-    social_link = models.CharField(max_length = 50)
-    phone_number = models.IntegerField()
-    user = models.TextField(null = True, blank = True)
+    bio = models.TextField(null=True, blank=True)
+    social_link = models.CharField(max_length=100)
+    phone_number = models.CharField(max_length=100)
+    user = models.OneToOneField(
+        to=User,
+        on_delete=models.SET_NULL,
+        null=True, blank=True
+    )
