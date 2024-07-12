@@ -1,3 +1,4 @@
+<a href="/">Главная</a> |
 <a href ="/products/"> Продукты </a> |
 <a href ="/customers/"> Покупатели </a> |
 <a href ="{% url 'news-list' %}"> Новости </a>
@@ -6,6 +7,7 @@
 <div>{{ product.description }}</div>
 <p>Цена: {{ product.price }} сом</p>
 <div>Осталось: {{ product.qty }}</div>
-<div>Категория: {{ product.category }}</div>
-<div>Просмотров: {{ product.views_qty }} </div>
+<div>Название категории: {{ product.category.name }}</div>
+<div>Описание категории: {{ product.category.description }}</div>
+<div>Просмотров: {{ product.views_qty }}</div>
 <div>Уникальные просмотры: {{ product.costumer_views.count }}</div>

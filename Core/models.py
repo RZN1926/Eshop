@@ -14,7 +14,7 @@ class Product(models.Model):
     description = models.TextField(null = True, blank = True)
     price = models.IntegerField()
     qty = models.IntegerField(default = 0)
-    costumer_views = models.ManyToManyField(
+    customer_views = models.ManyToManyField(
         to = User,
         blank = True)
     category = models.ForeignKey(
