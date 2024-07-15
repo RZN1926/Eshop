@@ -1,6 +1,14 @@
-<a href ="/products/"> Продукты </a> |
+<a href="/">Главная(продукты)</a> |
 <a href ="/customers/"> Покупатели </a> |
-<a href ="{% url 'news-list' %}"> Новости </a>
+<a href ="/news/"> Новости </a>
+
+<div>
+    <a href="/user/{{ request.user.id }}">
+        {{ request.user }}
+    </a>
+</div>
+
+
 
 <h1>Products</h1>
 {% for product in products %}

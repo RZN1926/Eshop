@@ -17,15 +17,22 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from customer.views import customer_views
-from Core.views import homepage, product_detail
-from news.views import news
+from Core.views import homepage, product_detail, user_cab
+from news.views import news, news_detail
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('products/', homepage),
-    path('product/<int:id>/', product_detail, name = 'product-detail'),
+
+    path('', homepage),
+
+    path('product/<int:id>/', product_detail),
+
     path('customers/', customer_views),
-    path('news/', news, name = 'news-list')
+
+    path('news/', news),
+
+    path('news/<int:id>/', news_detail),
+
+    path('user/<int:id>/', user_cab),
 ]
-
-
+    

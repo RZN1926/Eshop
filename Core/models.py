@@ -26,7 +26,6 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 
-
 class Profile(models.Model):
     bio = models.TextField(null = True, blank = True)
     social_link = models.CharField(max_length = 100)

@@ -23,9 +23,8 @@ class News(models.Model):
         on_delete = models.SET_NULL,
         null = True, blank = True,
         verbose_name = 'Категория')
-
+    views_qty = models.IntegerField(default = 0)
     
     def __str__(self):
         return self.title
-    
-    
+
