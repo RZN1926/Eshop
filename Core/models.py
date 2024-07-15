@@ -1,6 +1,7 @@
 from typing import Any
 from django.db import models
 from django.contrib.auth.models import User
+from customer.models import Customer
 
 # Create your models here.
 class Category(models.Model):
@@ -14,15 +15,19 @@ class Product(models.Model):
     description = models.TextField(null = True, blank = True)
     price = models.IntegerField()
     qty = models.IntegerField(default = 0)
-    customer_views = models.ManyToManyField(
-        to = User,
-        blank = True)
+
     category = models.ForeignKey(
         to = Category,
         on_delete = models.SET_NULL,
         null = True, blank = True,
         verbose_name = 'Категория')
+    
+    customer_views = models.ManyToManyField(
+        to = Customer,
+        blank = True)
+    
     views_qty = models.IntegerField(default = 0)
+    
     def __str__(self):
         return self.name
 

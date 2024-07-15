@@ -1,20 +1,75 @@
 from django.shortcuts import render
 from .models import News
-from django.db import models
-from django.shortcuts import render, get_object_or_404
-from django.contrib.auth.models import User
+from customer.models import Customer
 
 # Create your views here.
 
 def news(request):
-    return render (request, 'news.html', {'news': News.objects.all()})
+    return render(request, 'news.html', {'news': News.objects.all()})
+
+
+
+
 
 def news_detail(request, id):
-    news_object = get_object_or_404(News, id=id)
-    news_object.views_qty += 1
-    news_object.save()
-    context = {"news": news_object}
+    one_new_object = News.objects.get(id = id)
+    one_new_object.views += 1    
+    if request.user.is_authenticated:
+        user = request.user
+        if not Customer.objects.filter(user=user).exists():
+            costumer = Customer.objects.create(
+                name=user.username,
+                age=0,
+                gender='-',
+                user=user
+            )
+        costumer = user.costumer
+        one_new_object.user_views.add(user)
+
+    one_new_object.save()
+
+    context = {
+        "news": one_new_object,
+    }
     return render(request, 'news_links.html', context)
+
+        
+
+
+
+    #     one_new_object.user_views.add(request.user)
+    # one_new_object.save()
+    # context = {"news": one_new_object} 
+    # return render(request, 'news_links.html', context)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
