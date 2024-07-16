@@ -3,9 +3,11 @@
 <a href ="/news/"> Новости </a> |
 <a href="/users/">Пользователи</a>
 
+<p>Пользователь: {{ user }}</p>
 
+<div>
+    <a href="/user/{{ request.user.id }}">
+        {{ request.user }}
+    </a>
+</div>
 
-<h1>{{ news.title }}</h1>
-<div>{{ news.article }}</div>
-<div>Просмотров: {{ news.views }}</div>
-<div>Уникальные просмотры: {{ news.user_views.count }}</div>

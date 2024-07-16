@@ -8,22 +8,19 @@ def news(request):
     return render(request, 'news.html', {'news': News.objects.all()})
 
 
-
-
-
 def news_detail(request, id):
     one_new_object = News.objects.get(id = id)
     one_new_object.views += 1    
     if request.user.is_authenticated:
         user = request.user
         if not Customer.objects.filter(user=user).exists():
-            costumer = Customer.objects.create(
+            customer = Customer.objects.create(
                 name=user.username,
                 age=0,
                 gender='-',
                 user=user
             )
-        costumer = user.costumer
+        customer = user.customer
         one_new_object.user_views.add(user)
 
     one_new_object.save()

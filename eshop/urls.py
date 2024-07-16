@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from customer.views import customer_views
-from Core.views import homepage, product_detail, user_cab
+from Core.views import homepage, product_detail, user_cab, users_page, user_detail
 from news.views import news, news_detail
 
 urlpatterns = [
@@ -34,5 +34,9 @@ urlpatterns = [
     path('news/<int:id>/', news_detail),
 
     path('user/<int:id>/', user_cab),
+
+    path('users/', users_page, name='users'),
+    
+    path('users/user/<int:id>/', user_detail, name='user-profile'),
 ]
     
