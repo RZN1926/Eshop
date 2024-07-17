@@ -1,13 +1,13 @@
-<a href="/">Главная(продукты)</a> |
-<a href ="/customers/"> Покупатели </a> |
-<a href ="/news/"> Новости </a> |
-<a href="/users/">Пользователи</a>
+{% extends 'base.html' %}
+
+{% block content %}
 
 <p>Пользователь: {{ user }}</p>
 
 <div>
-    <a href="/user/{{ request.user.id }}">
-        {{ request.user }}
+    <a href="/user/{{ user.id }}">
+        {{ user }}
     </a>
 </div>
 
+{% endblock %}

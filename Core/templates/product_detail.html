@@ -1,9 +1,6 @@
-<a href="/">Главная(продукты)</a> |
-<a href ="/customers/"> Покупатели </a> |
-<a href ="/news/"> Новости </a> |
-<a href="/users/">Пользователи</a>
+{% extends 'base.html' %}
 
-
+{% block content %}
 
 <h1>{{ product.name }}</h1>
 <div>{{ product.description }}</div>
@@ -12,3 +9,5 @@
 <div>"{{ product.category.name }}", {{ product.category.description }}</div>
 <div>Просмотров: {{ product.views_qty }}</div>
 <div>Уникальные просмотры: {{ product.customer_views.count }}</div>
+
+{% endblock %}

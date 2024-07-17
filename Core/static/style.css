@@ -1,0 +1,11 @@
+nav {
+    background-color: black;
+    color: #eee;
+    padding: 13px 0 13px 5px;
+    box-sizing: border-box;
+}
+nav a {
+    color: #eee;
+    text-decoration: none;
+    margin-right: 10px;
+}

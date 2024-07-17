@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <title>
+            Проект "eshop"
+        </title>
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+    </head>
+
+<body>
+    <style>
+        body {
+            background: #000000;
+        }
+    </style>
+
+
+    <nav>
+<a href="/">Главная(продукты)</a> 
+<a href ="/customers/"> Покупатели </a> 
+<a href ="/news/"> Новости </a> 
+<a href="/users/">Пользователи</a>
+    </nav>
+{% block content %}
+
+{% endblock %}
+</body>
+</html>

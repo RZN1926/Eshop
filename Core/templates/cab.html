@@ -1,10 +1,10 @@
-<a href="/">Главная(продукты)</a> |
-<a href ="/customers/"> Покупатели </a> |
-<a href ="/news/"> Новости </a> |
-<a href="/users/">Пользователи</a>
+{% extends 'base.html' %}
 
+{% block content %}
 
 <h1>Личный кабинет</h1>
 <h2>{{ user }}</h2>
 <div>Login: {{ user.username }}</div>
 <div>Is employe: {{ user.is_staff }}</div>
+
+{% endblock %}

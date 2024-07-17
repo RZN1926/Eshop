@@ -1,7 +1,7 @@
-<a href="/">Главная(продукты)</a> |
-<a href ="/customers/"> Покупатели </a> |
-<a href ="/news/"> Новости </a> |
-<a href="/users/">Пользователи</a>
+{% extends 'base.html' %}
+
+{% block content %}
+
 <p>Список пользователей:<p>
 
 {% for user in users %}
@@ -9,3 +9,5 @@
     {{ user.id }} <a href="user/{{ user.id }}/">{{ user.username }}</a>
 </div>
 {% endfor %}
+
+{% endblock %}

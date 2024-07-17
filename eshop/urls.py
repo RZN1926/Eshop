@@ -19,6 +19,9 @@ from django.urls import path
 from customer.views import customer_views
 from Core.views import homepage, product_detail, user_cab, users_page, user_detail
 from news.views import news, news_detail
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -38,5 +41,5 @@ urlpatterns = [
     path('users/', users_page, name='users'),
     
     path('users/user/<int:id>/', user_detail, name='user-profile'),
-]
+] + static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
     

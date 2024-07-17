@@ -1,15 +1,12 @@
-<a href="/">Главная(продукты)</a> |
-<a href ="/customers/"> Покупатели </a> |
-<a href ="/news/"> Новости </a> |
-<a href="/users/">Пользователи</a>
+{% extends 'base.html' %}
 
-
+{% block content %}
 
 <h1>Customers</h1>
 {% for customer in cust %}
     <div>{{ customer.id }}. <strong>name: </strong>{{ customer.name }}, <strong>age: </strong>{{ customer.age }}, <strong>sex: </strong>{{ customer.sex }}</div>
 {% endfor %}
 
-
+{% endblock %}
 
 
