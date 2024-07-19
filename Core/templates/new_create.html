@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form method = 'POST'>
+    {% csrf_token %}
+    <h2>Add new</h2>
+    <p>
+        <input type = "text" name = 'new_title' placeholder="Заголовок" required>
+    </p>
+    <p>
+        <textarea name = "new_article" cols = '50' rows = '5' placeholder="Текст"></textarea>
+    </p>
+    <button>Add</button>
+</form>
+
+{% endblock %}

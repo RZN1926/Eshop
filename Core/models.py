@@ -22,6 +22,11 @@ class Product(models.Model):
         null = True, blank = True,
         verbose_name = 'Категория')
     
+    rating = models.IntegerField(default = 0)
+    quarantee = models.DateField(null = True, blank = True)
+    expiration_date = models.DateField(null = True, blank = True)
+    create_at = models.DateTimeField(null = True, auto_now_add = True)
+    update_at = models.DateTimeField(null = True, auto_now = True)
     customer_views = models.ManyToManyField(
         to = Customer,
         blank = True)

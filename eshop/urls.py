@@ -17,29 +17,23 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from customer.views import customer_views
-from Core.views import homepage, product_detail, user_cab, users_page, user_detail
-from news.views import news, news_detail
+from Core.views import homepage, product_detail, user_cab, users_page, user_detail, product_create
+from news.views import news, news_detail, new_create
 from django.conf import settings
 from django.conf.urls.static import static
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-
     path('', homepage),
-
-    path('product/<int:id>/', product_detail),
-
+    path('product/<int:id>/', product_detail, name = 'product-detail'),
+    path('product-create/', product_create, name = 'product-create'),
     path('customers/', customer_views),
-
     path('news/', news),
-
-    path('news/<int:id>/', news_detail),
-
+    path('new/<int:id>/', news_detail),
     path('user/<int:id>/', user_cab),
-
     path('users/', users_page, name='users'),
-    
+    path('new-create/', new_create, name = 'new-create'),
     path('users/user/<int:id>/', user_detail, name='user-profile'),
 ] + static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
     

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import News
 from customer.models import Customer
 
@@ -42,10 +42,19 @@ def news_detail(request, id):
 
 
 
+def new_create(request):
+    if request.method == 'GET':
+        return render(request, 'new_create.html')
+    elif request.method == 'POST':
+        data = request.POST
+        title = data['new_title']
+        text = data['new_article']
 
-
-
-
+        new_object = News.objects.create(
+            title = title,
+            article = text
+        )
+        return redirect(f'/new/{new_object.id}/')
 
 
 
