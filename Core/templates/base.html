@@ -10,20 +10,19 @@
     <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 
-<body>
-    <nav>
-        <a href="/">Главная(продукты)</a>
-        <a href="{% url 'product-create' %}">Добавить продукты</a>
-        <a href ="/customers/"> Покупатели </a> 
-        <a href ="/news/"> Новости </a> 
-        <a href="/users/">Пользователи</a>
-        <a href="{% url 'new-create' %}">Добавить новости</a>
+<body class="color">
+    <div class="container-fluid p-5 bg-primary text-white text-center">
+        <h2  class = 'head'>Eshop site | Made by BC5</h2>
+    </div>
+    <nav class = 'nav table table-hover'>
+        <a href="/" class = 'pad'>Главная(продукты)</a>
+        <a href="{% url 'product-create' %}" class = 'pad1'>Добавить продукты</a>
+        <a href ="/customers/" class = 'pad1'> Покупатели </a> 
+        <a href ="/news/" class = 'pad1'> Новости </a> 
+        <a href="/users/" class = 'pad1'>Пользователи</a>
+        <a href="{% url 'new-create' %}" class = 'pad1'>Добавить новости</a>
     </nav>
 
-    <div class="container-fluid p-5 bg-primary text-white text-center">
-        <h1>Eshop site</h1>
-        <p>Made by BC5</p> 
-    </div>
       
     <div class="container">
     {% block content %}
@@ -34,3 +33,8 @@
     <script src="{% static 'code.js' %}"></script> 
 </body>
 </html>
+
+
+
+
+

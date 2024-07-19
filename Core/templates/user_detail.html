@@ -2,12 +2,12 @@
 
 {% block content %}
 
-<p>Пользователь: {{ user }}</p>
+<p class = 'product'>Пользователь: {{ user }}</p>
 
 <div>
-    <a href="/user/{{ user.id }}">
-        {{ user }}
-    </a>
+    <a href="/user/{{ user.id }}">{{ user }}</a>
 </div>
 
 {% endblock %}
+
+

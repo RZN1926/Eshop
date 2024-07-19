@@ -4,7 +4,7 @@
 
 <form method = 'POST'>
     {% csrf_token %}
-    <h2>Add new</h2>
+    <h2 class = 'product'>Add new</h2>
     <p>
         <input type = "text" name = 'new_title' placeholder="Заголовок" required>
     </p>
@@ -15,3 +15,5 @@
 </form>
 
 {% endblock %}
+
+

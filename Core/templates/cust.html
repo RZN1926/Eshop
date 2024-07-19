@@ -2,11 +2,15 @@
 
 {% block content %}
 
-<h1>Customers</h1>
+<h1 class = 'product'>Customers</h1>
 {% for customer in cust %}
-    <div>{{ customer.id }}. <strong>name: </strong>{{ customer.name }}, <strong>age: </strong>{{ customer.age }}, <strong>sex: </strong>{{ customer.sex }}</div>
+    <div class = 'product'>{{ customer.id }}. <strong class = 'product'>name: </strong>{{ customer.name }},
+        <strong class = 'product'>age: </strong>{{ customer.age }}, <strong class = 'product'>sex: </strong>{{ customer.sex }}
+    </div>
 {% endfor %}
 
 {% endblock %}
+
+
 
 

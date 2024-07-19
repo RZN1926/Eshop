@@ -13,3 +13,6 @@ class ProductForm(forms.ModelForm):
             'quarantee',
             'expiration_date'
         ]
+
+
+

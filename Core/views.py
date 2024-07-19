@@ -62,3 +62,9 @@ def user_cab(request, id):
     user = User.objects.get(id = id)
     context = {'user': user}
     return render (request, 'cab.html', context)
+
+
+
+
+
+

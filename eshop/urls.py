@@ -37,3 +37,6 @@ urlpatterns = [
     path('users/user/<int:id>/', user_detail, name='user-profile'),
 ] + static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
     
+
+
+
