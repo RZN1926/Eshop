@@ -16,9 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from customer.views import customer_views
-from Core.views import homepage, product_detail, user_cab, users_page, user_detail, product_create
-from news.views import news, news_detail, new_create
+from customer.views import *
+from Core.views import *
+from news.views import *
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -33,8 +33,10 @@ urlpatterns = [
     path('new/<int:id>/', news_detail),
     path('user/<int:id>/', user_cab),
     path('users/', users_page, name='users'),
+    path('cust_adder/', cust_adder, name = 'customer-add'),
     path('new-create/', new_create, name = 'new-create'),
     path('users/user/<int:id>/', user_detail, name='user-profile'),
+    path('profile_create/', profile_create, name = 'profile-create'),
 ] + static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
     
 

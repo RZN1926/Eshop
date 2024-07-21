@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<form method = 'POST'>
+    {% csrf_token %}
+    <h3 class = 'product'>Add new customer</h3>
+    <br>
+    <p>
+        <input type = 'text' name = 'Name' placeholder='Name' required>
+    </p>
+    <p>
+        <input type = 'number' name = 'Age' placeholder='Age' min='0' max='130' step='1'>
+    </p>
+    <p>
+        <input type = 'text' name = 'Gender' placeholder='Gender'>
+    </p>
+    <button>Add</button>
+</form>
+
+{% endblock %}
+
+

@@ -3,45 +3,46 @@ nav {
     color: #979696;
     padding: 15px 0 15px 5px;
     box-sizing: content-box;
-}
+}    
 
 nav a {
     color: #eee;
     text-decoration: none;
     margin-right: 10px;
-}
+}    
 
+
+.bg-primary {
+    background-color: #0d0d0d !important;
+}    
+
+
+.color {
+    background-color: #080808;
+}    
+
+.product {
+    color: #ddd;
+}    
 
 .pad {
     padding-left: 210px;
 }
 
 .pad1 {
-    padding-left: 76px;
+    padding-left: 30px;
 }
 
-.bg-primary {
-    background-color: #0d0d0d !important;
-}
-
-
-.color {
-    background-color: #080808;
-}
-
-.product {
-    color: #ddd;
-}
 
 .container {
     padding-left: 103px;
     padding-right: 120px;
     box-shadow: #080808;
     
-}
+}    
 
 .head {
     padding-right: 755px;
-}
+}    
 
-    
+

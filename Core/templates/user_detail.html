@@ -1,11 +1,9 @@
 {% extends 'base.html' %}
-
 {% block content %}
 
 <h4 class = 'product'>User: {{ user }}</h4>
-
 <div>
-    <a href="/user/{{ user.id }}">{{ user }}</a>
+    <a href='/user/{{ user.id }}'>{{ user }}</a>
 </div>
 
 {% endblock %}

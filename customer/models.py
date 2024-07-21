@@ -10,9 +10,7 @@ class Customer(models.Model):
     user = models.OneToOneField(
         to = User,
         on_delete = models.SET_NULL,
-        null = True, blank = True
-    )
-
+        null = True, blank = True)
     def __str__(self):
         return self.name
 

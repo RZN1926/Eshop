@@ -1,15 +1,14 @@
 {% extends 'base.html' %}
-
 {% block content %}
 
 <form method = 'POST'>
     {% csrf_token %}
-    <h1 class = 'product'>Add new</h1>
+    <h1 class = 'product'>Add new news</h1>
     <p>
-        <input type = "text" name = 'new_title' placeholder="Заголовок" required>
+        <input type = 'text' name = 'new_title' placeholder='Заголовок' required>
     </p>
     <p>
-        <textarea name = "new_article" cols = '50' rows = '5' placeholder="Текст"></textarea>
+        <textarea name = 'new_article' cols = '50' rows = '5' placeholder='Текст'></textarea>
     </p>
     <button>Add</button>
 </form>
