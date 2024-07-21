@@ -3,14 +3,25 @@
 {% block content %}
 
 <h1 class = 'product'>Customers</h1>
-{% for customer in cust %}
-    <div class = 'product'>{{ customer.id }}. <strong class = 'product'>name: </strong>{{ customer.name }},
-        <strong class = 'product'>age: </strong>{{ customer.age }}, <strong class = 'product'>sex: </strong>{{ customer.sex }}
-    </div>
-{% endfor %}
+<table class = 'table table-striped table-bordered table-hover' data-bs-theme = "dark">
+    <thead>
+        <tr class = 'table-info'>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for customer in cust %}
+            <tr>
+                <td> {{ customer.name }}</td>
+                <td> {{ customer.age }}</td>
+                <td> {{ customer.sex }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
 
 {% endblock %}
-
-
 
 
