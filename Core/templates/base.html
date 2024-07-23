@@ -23,6 +23,12 @@
         <a class = 'pad1' href = '{% url "new-create" %}'>    Add news</a>
         <a class = 'pad1' href = '/users/'>                   Users</a>
         <a class = 'pad1' href = '{% url "profile-create" %}'>Add user</a>
+        <form action="/search/" method = "GET">
+            <input type="text" name="keyword">
+            <button>Search</button>
+        </form>
+    
+    
     </nav>
 
       

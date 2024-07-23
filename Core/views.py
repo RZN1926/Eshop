@@ -1,15 +1,22 @@
 from django.shortcuts import render, HttpResponse, redirect
 from .models import Product
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, AbstractUser
 from customer.models import Customer
 from django.contrib.auth import get_user_model
 from .forms import ProductForm
+from .filters import ProductFilter
 
 # Create your views here.
 
 def homepage(request):
-    product_list = Product.objects.all()  # select * from Product
-    context = {'products': product_list}  #return HttpResponse('Hello Django!')
+    product_list = Product.objects.all() 
+     # select * from Product
+    
+    filter_object = ProductFilter(
+        data = request.GET,
+        queryset = product_list
+    )    
+    context = {'filter_object': filter_object}  #return HttpResponse('Hello Django!')
     return render(request, 'index.html', context)
 
 def product_detail(request, id):
