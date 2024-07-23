@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_bootstrap5',
-    'django-filters',
+    'django_filters',
     'Core',
     'customer',
     'news']

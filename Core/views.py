@@ -9,8 +9,7 @@ from .filters import ProductFilter
 # Create your views here.
 
 def homepage(request):
-    product_list = Product.objects.all() 
-     # select * from Product
+    product_list = Product.objects.all()           # select * from Product
     
     filter_object = ProductFilter(
         data = request.GET,
@@ -81,5 +80,8 @@ def profile_create(request):
 
 
 
-
-
+def search(request):
+    keyword = request.GET['keyword']
+    products = Product.objects.filter(name__icontains = keyword)
+    context = {'products': products}
+    return render(request, 'search_result.html', context)
