@@ -1,10 +1,11 @@
 from django.shortcuts import render, HttpResponse, redirect
 from .models import Product
-from django.contrib.auth.models import User, AbstractUser
+from django.contrib.auth.models import User
 from customer.models import Customer
 from django.contrib.auth import get_user_model
 from .forms import ProductForm
 from .filters import ProductFilter
+from django.db.models import Q
 
 # Create your views here.
 
@@ -15,8 +16,8 @@ def homepage(request):
         data = request.GET,
         queryset = product_list
     )    
-    context = {'filter_object': filter_object}  #return HttpResponse('Hello Django!')
-    return render(request, 'index.html', context)
+    context = {'filter_object': filter_object}  
+    return render(request, 'index.html', context)  #return HttpResponse('Hello Django!')
 
 def product_detail(request, id):
     product_object = Product.objects.get(id = id)
@@ -78,10 +79,12 @@ def profile_create(request):
         
         return redirect('profile-create')
 
-
-
 def search(request):
     keyword = request.GET['keyword']
-    products = Product.objects.filter(name__icontains = keyword)
+    products = Product.objects.filter(
+        Q(name__icontains = keyword) |
+        Q(description__icontains = keyword) |
+        Q(category__name__icontains = keyword)
+        )
     context = {'products': products}
     return render(request, 'search_result.html', context)

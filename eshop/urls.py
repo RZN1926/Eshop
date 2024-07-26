@@ -28,18 +28,17 @@ urlpatterns = [
     path('', homepage),
     path('search/', search),
     path('product/<int:id>/', product_detail, name = 'product-detail'),
-    path('product-create/', product_create, name = 'product-create'),
+    path('product-create/', product_create, name = 'product-create'), # type: ignore
     path('customers/', customer_views),
     path('news/', news),
     path('new/<int:id>/', news_detail),
     path('user/<int:id>/', user_cab),
     path('users/', users_page, name='users'),
-    path('cust_adder/', cust_adder, name = 'customer-add'),
-    path('new-create/', new_create, name = 'new-create'),
+    path('cust_adder/', cust_adder, name = 'customer-add'), # type: ignore
+    path('new-create/', new_create, name = 'new-create'), # type: ignore
     path('users/user/<int:id>/', user_detail, name='user-profile'),
-    path('profile_create/', profile_create, name = 'profile-create'),
+    path('profile_create/', profile_create, name = 'profile-create'), # type: ignore
 ] + static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
-    
 
 
-
+urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

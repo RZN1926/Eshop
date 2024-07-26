@@ -14,22 +14,52 @@
     <div class='container-fluid p-5 bg-primary text-white text-center'>
         <h2  class = 'head'>Eshop site | Made by BC5</h2>
     </div>
-    <nav class = 'nav table table-hover'>
-        <a class = 'pad'  href = '/'>                         Main(stuff)</a>
-        <a class = 'pad1' href = '{% url "product-create" %}'>Add stuff</a>
-        <a class = 'pad1' href = '/customers/'>               Customers</a>
-        <a class = 'pad1' href = '{% url "customer-add" %}'>  Add customer</a>
-        <a class = 'pad1' href = '/news/'>                    News</a> 
-        <a class = 'pad1' href = '{% url "new-create" %}'>    Add news</a>
-        <a class = 'pad1' href = '/users/'>                   Users</a>
-        <a class = 'pad1' href = '{% url "profile-create" %}'>Add user</a>
-        <form action="/search/" method = "GET">
-            <input type="text" name="keyword">
-            <button>Search</button>
-        </form>
-    
-    
-    </nav>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand pad" href="/">
+            <img src="{% static 'logo.png' %}" alt="" height="50px">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class = 'pad nav-link'  href = '/'>Main(stuff)</a>
+            </li>
+              <li class="nav-item">
+                <a class = 'pad nav-link' href = '/customers/'>Customers</a>
+              </li>
+              <li class="nav-item">
+                <a class = 'pad nav-link' href = '/news/'>News</a>
+              </li>
+              <li class="nav-item">
+                <a class = 'pad nav-link' href = '/users/'>Users</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Add</a>
+                <ul class="dropdown-menu">
+                    <li><a class = 'dropdown-item' href = '{% url "product-create" %}'>Add stuff</a></li>
+                    <li><a class = 'dropdown-item' href = '{% url "customer-add" %}'>Add customer</a></li>
+                    <li><a class = 'dropdown-item' href = '{% url "new-create" %}'>Add news</a></li>
+                    <li><a class = 'dropdown-item' href = '{% url "profile-create" %}'>Add user</a></li>
+                </ul>
+              </li>
+            </ul>
+            <form action="/search/" method = "GET">
+                <input type="text" name="keyword" placeholder="Search">
+                <button class = 'btn btn-primary'>Search</button>
+            </form>
+            </div>
+        </div>
+      </nav>
+      
+
+  
+
+
+
+
 
       
     <div class='container'>

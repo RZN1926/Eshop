@@ -15,24 +15,21 @@ class Product(models.Model):
     description = models.TextField(null = True, blank = True)
     price = models.IntegerField()
     qty = models.IntegerField(default = 0)
-
     category = models.ForeignKey(
         to = Category,
         on_delete = models.SET_NULL,
         null = True, blank = True,
         verbose_name = 'Категория')
-    
     rating = models.IntegerField(default = 0)
-    quarantee = models.DateField(null = True, blank = True)
+    guarantee = models.DateField(null = True, blank = True)
     expiration_date = models.DateField(null = True, blank = True)
     create_at = models.DateTimeField(null = True, auto_now_add = True)
     update_at = models.DateTimeField(null = True, auto_now = True)
     customer_views = models.ManyToManyField(
         to = Customer,
         blank = True)
-    
     views_qty = models.IntegerField(default = 0)
-    
+    photo = models.ImageField(verbose_name = 'photo', upload_to = 'prods/', null = True, blank = True)
     def __str__(self):
         return self.name
 
@@ -44,6 +41,6 @@ class Profile(models.Model):
         to = User,
         on_delete = models.SET_NULL,
         null = True, blank = True)
-
+    photo = models.ImageField(verbose_name = "photo", upload_to = "profiles/", null = True, blank = True)
 
 
