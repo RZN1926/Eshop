@@ -27,17 +27,19 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', homepage),
     path('search/', search),
-    path('product/<int:id>/', product_detail, name = 'product-detail'),
-    path('product-create/', product_create, name = 'product-create'), # type: ignore
+    # path('product/<int:id>/', product_detail, name = 'product-detail'),
+    path('product/<int:pk>/', ProductDetailView.as_view(), name = 'product-detail'),
+    # path('product-create/', product_create, name = 'product-create'), # type: ignore
+    path('product-create/', ProductCreateView.as_view(), name = 'product-create'), # type: ignore
     path('customers/', customer_views),
     path('news/', news),
-    path('new/<int:id>/', news_detail),
+    path('news/<int:id>/', news_detail),
     path('user/<int:id>/', user_cab),
     path('users/', users_page, name='users'),
     path('cust_adder/', cust_adder, name = 'customer-add'), # type: ignore
     path('new-create/', new_create, name = 'new-create'), # type: ignore
     path('users/user/<int:id>/', user_detail, name='user-profile'),
-    path('profile_create/', profile_create, name = 'profile-create'), # type: ignore
+    path('user_create/', user_create, name = 'user-create'), # type: ignore
 ] + static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
 
 

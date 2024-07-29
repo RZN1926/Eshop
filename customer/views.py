@@ -16,8 +16,5 @@ def cust_adder(request):
         name = data['Name']
         age = data['Age']
         gender = data['Gender']
-        new_obj = Customer.objects.create(
-            name = name,
-            age = age,
-            sex = gender)
+        new_obj = Customer.objects.create(name = name, age = age, sex = gender)
         return redirect('customer-add')

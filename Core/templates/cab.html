@@ -8,7 +8,10 @@
     <div>Is employe: {{ user.is_staff }}</div>
     {% if user.profile %}
         <div>Bio: {{ user.profile.bio }}</div>
+        {% if user.profile.photo %}
         <img src="/media/{{ user.profile.photo }}" alt="" height = '250px'>
+        <!-- <img src="{{ user.profile.photo.url }}" alt="" height = '250px'> -->
+        {% endif %}
     {% endif %}
 </div>
 {% endblock %}

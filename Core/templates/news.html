@@ -2,8 +2,13 @@
 {% block content %}
 
 <h1 class = 'product'>News</h1>
-{% for item in new %}
-    <div><br><strong><a href='/news/{{ item.id }}'>{{ item.title }}:</a></strong><br> {{ item.article }} <br>{{ item.views }} views</div>
+<p>
+    <form method="get">
+        {{ filter_obj.form.as_p }}
+        <button>Use</button>
+    </form>
+</p>
+{% for item in filter_obj.qs %}
+    <div style="color: white;"><br><strong><a href='/news/{{ item.id }}'>{{ item.title }}:</a></strong><br> {{ item.article }} <br>{{ item.views }} views<br></div>
 {% endfor %}
-
 {% endblock %}

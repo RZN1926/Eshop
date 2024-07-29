@@ -175,18 +175,24 @@
 from django.shortcuts import render, redirect
 from .models import New
 from customer.models import Customer
+from .filters import NewFilter
 
 # Create your views here.
 
 def news(request):
-    return render(request, 'news.html', {'news': New.objects.all()})
+    new = New.objects.all()
+    filter_obj = NewFilter(request.GET, queryset =  new )
+    context = {"filter_obj": filter_obj}
+    return render(request, 'news.html', context)
+
+
     
 def news_detail(request, id):
     one_new_object = New.objects.get(id = id)
     one_new_object.views += 1    
     if request.user.is_authenticated:
         user = request.user
-        if not Customer.objects.filter(user=user).exists():
+        if not Customer.objects.filter(user = user).exists():
             customer = Customer.objects.create(
                 name=user.username,
                 age=0,
@@ -215,5 +221,4 @@ def new_create(request):
             title = title,
             article = text)
         return redirect('new-create')
-
-
+    

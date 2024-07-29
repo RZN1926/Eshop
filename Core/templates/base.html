@@ -42,35 +42,24 @@
                     <li><a class = 'dropdown-item' href = '{% url "product-create" %}'>Add stuff</a></li>
                     <li><a class = 'dropdown-item' href = '{% url "customer-add" %}'>Add customer</a></li>
                     <li><a class = 'dropdown-item' href = '{% url "new-create" %}'>Add news</a></li>
-                    <li><a class = 'dropdown-item' href = '{% url "profile-create" %}'>Add user</a></li>
+                    <li><a class = 'dropdown-item' href = '{% url "user-create" %}'>Add user</a></li>
                 </ul>
               </li>
             </ul>
-            <form action="/search/" method = "GET">
-                <input type="text" name="keyword" placeholder="Search">
-                <button class = 'btn btn-primary'>Search</button>
-            </form>
+              <form class="d-flex" action="/search/" method = "GET">
+                <input class="form-control me-2" type="text" placeholder="Search" name = 'keyword'>
+                <button class="btn btn-primary" type="submit">Search</button>
+              </form>
             </div>
         </div>
       </nav>
-      
-
-  
-
-
-
-
-
-      
     <div class='container'>
     {% block content %}
     {% endblock %}
     </div>
-
     <script src='{% static "code.js" %}'></script> 
 </body>
 </html>
-
 
 
 
